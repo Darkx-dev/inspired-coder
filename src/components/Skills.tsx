@@ -4,10 +4,10 @@ import React, { useRef } from "react";
 import { skills } from "@/data/constants";
 
 const Skills: React.FC = () => {
-  const menuRefs = skills.map(() => useRef<HTMLUListElement>(null));
+  const menuRefs: any = []
 
   const toggleMenu = (index: number) => {
-    const menu = menuRefs[index].current;
+    const menu = menuRefs[index];
     if (menu) {
       const isActive = menu.classList.contains("active");
       isActive ? menu.classList.remove("active") : menu.classList.add("active");
@@ -21,7 +21,7 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <div className="mt-20 px-20 min-h-screen">
+    <div className="mt-20 px-20 max-md:px-4 min-h-screen">
       <div className="text-center w-full">
         <h3 className="text-secondary font-medium text-xl">Skills</h3>
         <h1 className="text-5xl font-medium tracking-tighter mt-2">
@@ -59,7 +59,7 @@ const Skills: React.FC = () => {
                 </i>
               </button>
               <ul
-                ref={menuRefs[index]}
+                ref={(elem) => menuRefs.push(elem)}
                 className="grid grid-cols-2  overflow-hidden active *:border *:px-4 *:py-2"
                 style={{
                   height: 0,

@@ -6,7 +6,7 @@ import Stripes from "./Stripes";
 
 const About = () => {
   return (
-    <div className="min-h-screen px-20 pt-10 relative overflow-x-clip">
+    <div className="min-h-screen px-20 max-md:px-4 pt-10 relative overflow-x-clip">
       <div className="flex justify-between">
         <div>
           <h3 className="text-secondary font-medium text-xl">About Me</h3>
@@ -22,11 +22,11 @@ const About = () => {
         </div> */}
       </div>
       <p className="mt-10 z-50 text-gray-200 lg:w-1/2 tracking-wide font-medium text-justify ml-auto h-[85vh]">
-        Hi, I'm <span className="text-secondary">Roshan</span>, a self-taught{" "}
+        Hi, I&apos;m <span className="text-secondary">Roshan</span>, a self-taught{" "}
         <span className="text-secondary">Full Stack Developer</span> with over a
         year of hands-on experience in building and designing{" "}
         <span className="text-secondary">web</span> applications. While I
-        haven't had the chance to take on internships or professional roles yet,
+        haven&apos;t had the chance to take on internships or professional roles yet,
         my passion for{" "}
         <span className="text-secondary">exploring new technologies</span> and
         pushing creative boundaries keeps me constantly learning and growing. I

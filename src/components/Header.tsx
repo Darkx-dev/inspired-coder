@@ -2,12 +2,12 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="flex items-center w-full px-20 h-20">
+    <header className="flex items-center w-full px-20 max-md:px-4 h-20">
       <div className="flex">
         <h1 className="text-2xl font-bold text-secondary">Roshan</h1>
       </div>
       <nav className="ml-16">
-        <ul className="flex *:px-2 hover:*:text-secondary *:transition-colors">
+        <ul className="flex *:px-2 hover:*:text-secondary *:transition-colors  max-md:hidden">
           <li>
             <a href="#">Home</a>
           </li>

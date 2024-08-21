@@ -4,7 +4,7 @@ const Projects = () => {
     
   return (
     <div className="bg-gray-dark">
-      <div className="w-full mt-10 px-20 py-12">
+      <div className="w-full mt-10 px-20 max-md:px-4 py-12">
         <h3 className="text-secondary font-medium text-xl">Skills</h3>
         <h1 className="text-5xl font-medium tracking-tighter mt-2">
           Top Projects <br />
@@ -12,7 +12,7 @@ const Projects = () => {
         </h1>
       </div>
       <div className="flex items-center justify-center h-screen">
-        <h1 className="text-6xl text-secondary font-semibold">Under Construction</h1>
+        <h1 className="text-6xl max-md:text-5xl text-center text-secondary font-semibold">Under Construction</h1>
       </div>
     </div>
   );
