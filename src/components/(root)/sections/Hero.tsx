@@ -1,5 +1,5 @@
 import React from "react";
-import CubeIcon from "./illustrations/Cube";
+import CubeIcon from "../../illustrations/Cube";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -45,13 +45,13 @@ const Hero = () => {
       <div className="z-10">
         <h1 className="text-center text-[12rem] font-semibold leading-[0.85] tracking-tight *:block max-md:text-7xl">
           <span
-            className="-translate-x-40 max-md:-translate-x-10"
+            className=""
             id="firstname"
           >
-            Roshan
+            Inspired
           </span>
-          <span className="translate-x-36 max-md:translate-x-10" id="lastname">
-            Kumar
+          <span className="" id="lastname">
+            Coder
           </span>
         </h1>
       </div>

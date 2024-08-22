@@ -1,5 +1,5 @@
 import React from "react";
-import OutlinedButton from "./buttons/Outlined";
+import OutlinedButton from "../../buttons/Outlined";
 
 const Collaboration = () => {
   return (

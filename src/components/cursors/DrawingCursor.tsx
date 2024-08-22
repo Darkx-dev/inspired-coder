@@ -1,24 +1,26 @@
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 
-// Utility function to check if the user is on a mobile device
-const isMobile = () => {
-  if (global.navigator) {
-    return /Mobi|Android/i.test(global.navigator.userAgent);
-  }
-};
-
-interface CustomCursorProps {
+interface DrawingCursorProps {
   gradientColors?: string[]; // Optional array of gradient colors
+  size?: number; // Optional
 }
 
-const CustomCursor: React.FC<CustomCursorProps> = ({
+const DrawingCursor: React.FC<DrawingCursorProps> = ({
   gradientColors = ["#ffffff"],
+  size = 5,
 }) => {
+  "use client";
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const points = useRef<{ x: number; y: number }[]>([]);
-  const [isMobileDevice, setIsMobileDevice] = useState(isMobile());
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
 
   useEffect(() => {
+    const mobileCheck =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        global.navigator.userAgent,
+      );
+    setIsMobileDevice(mobileCheck);
     const canvas = canvasRef.current;
     if (!canvas || isMobileDevice) return; // Skip if on mobile
     canvas.width = window.innerWidth;
@@ -64,7 +66,7 @@ const CustomCursor: React.FC<CustomCursorProps> = ({
           context.strokeStyle = gradientColors[0];
         }
 
-        context.lineWidth = 8;
+        context.lineWidth = size;
 
         context.moveTo(start.x, start.y);
         context.lineTo(end.x, end.y);
@@ -73,9 +75,15 @@ const CustomCursor: React.FC<CustomCursorProps> = ({
     };
 
     document.addEventListener("mousemove", handleMouseMove);
+
     window.addEventListener("resize", () => {
       canvas.height = window.innerHeight;
       canvas.width = window.innerWidth;
+      const mobileCheck =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          global.navigator.userAgent,
+        );
+      setIsMobileDevice(mobileCheck);
     });
 
     return () => {
@@ -91,4 +99,4 @@ const CustomCursor: React.FC<CustomCursorProps> = ({
   ) : null;
 };
 
-export default CustomCursor;
+export default DrawingCursor;

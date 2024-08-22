@@ -10,6 +10,7 @@ const Skills: React.FC = () => {
 
   const toggleMenu = (index: number) => {
     const menu = menuRefs[index];
+    const menuIcon = menu.previousSibling.querySelector(".dropdown-icon");
     if (menu) {
       const isActive = menu.classList.contains("active");
       isActive ? menu.classList.remove("active") : menu.classList.add("active");
@@ -18,6 +19,15 @@ const Skills: React.FC = () => {
         opacity: isActive ? 1 : 0,
         duration: 0.5,
         ease: "power2.inOut",
+        onStart: () => {
+          isActive
+            ? gsap.to(menuIcon, {
+                rotate: 90,
+              })
+            : gsap.to(menuIcon, {
+                rotate: 0,
+              });
+        },
       });
     }
   };
@@ -67,7 +77,7 @@ const Skills: React.FC = () => {
                   </span>
                   <span>{skill.category}</span>
                 </h1>
-                <i>
+                <i className="dropdown-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

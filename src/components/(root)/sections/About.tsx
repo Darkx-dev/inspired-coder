@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
-import CubeIcon from "./illustrations/Cube";
-import OutlinedButton from "./buttons/Outlined";
-import CircleIcon from "./illustrations/Circle";
-import Stripes from "./Stripes";
-import LetterFade from "./LetterFade";
+import CubeIcon from "../../illustrations/Cube";
+import OutlinedButton from "../../buttons/Outlined";
+import CircleIcon from "../../illustrations/Circle";
+import Stripes from "../../Stripes";
+import LetterFade from "../../LetterFade";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -62,7 +62,7 @@ const About = () => {
         always eager to dive into the latest tools and frameworks to craft
         innovative solutions.
       </LetterFade>
-      <div className="h-[40vh] w-screen">
+      <div className="h-[40vh] w-full">
         <Stripes />
       </div>
     </section>

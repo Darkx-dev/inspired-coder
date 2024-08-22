@@ -21,11 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
+        {/* <link
           rel="icon"
           type="image/gif"
           href="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnR3dzQza2gweXFsZTV1eDhreHJ4cTN3bm80Z2I4N3ZodTI1MHltYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tHIRLHtNwxpjIFqPdV/giphy.webp"
-        />
+        /> */}
+        <link rel="icon" type="image/png" href="/favicon-modified.png" />
       </head>
       <body className={monsterrat.className + " bg-black text-white"}>
         <SmoothScrolling>{children}</SmoothScrolling>

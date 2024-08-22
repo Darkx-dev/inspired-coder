@@ -2,13 +2,15 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React from "react";
 import Navbar from "./Navbar";
+import Image from "next/image";
 
 const Header = () => {
   useGSAP(() => {
     gsap.from("#header", {
       opacity: 0,
       y: -200,
-      duration: 1.5,
+      duration: 1.2,
+      ease: "power3.in",
     });
   });
   return (
@@ -17,7 +19,9 @@ const Header = () => {
       id="header"
     >
       <div className="flex">
-        <h1 className="text-2xl font-bold text-secondary">Roshan</h1>
+        {/* <h1 className="text-2xl font-bold text-secondary"> */}
+          <Image src="/logo.png" width={60} height={60} alt="InspiredCoder"/>
+        {/* </h1> */}
       </div>
       <Navbar />
       <a
