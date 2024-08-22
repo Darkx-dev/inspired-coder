@@ -13,6 +13,7 @@ function SmoothScrolling({ children }: { children: React.ReactNode }) {
     smooth: true,
     // infinite: true
   };
+  
 
   return (
     <ReactLenis root options={lenisOptions}>

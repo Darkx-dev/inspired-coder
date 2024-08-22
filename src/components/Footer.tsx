@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="mt-10 px-20 pb-5 max-md:px-4">
+    <section className="mt-10 px-20 pb-5 max-md:px-4" id="section-contact">
       <div className="flex justify-between border-t-2 border-gray-light pt-10">
         {/* <p></p> */}
         <h4 className="mt-auto text-gray-light">
@@ -23,7 +23,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

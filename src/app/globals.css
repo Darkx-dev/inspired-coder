@@ -37,6 +37,10 @@ html.lenis body {
   max-width: 100vw !important;
 }
 
+* {
+  cursor: none !important;
+}
+
 /* body {
   --sb-track-color: #00000000;
   --sb-thumb-color: #90FF00;

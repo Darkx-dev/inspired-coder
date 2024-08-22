@@ -3,7 +3,7 @@ import OutlinedButton from "./buttons/Outlined";
 
 const Collaboration = () => {
   return (
-    <div className="px-20 max-md:px-4">
+    <div className="px-20 max-md:px-4" id="section-collab">
       <div className="mt-10 flex w-full flex-col items-center px-20 py-12 text-center">
         <h3 className="text-xl font-medium text-secondary">Collaboration</h3>
         <h1 className="text-9xl font-medium tracking-tighter max-md:text-5xl">

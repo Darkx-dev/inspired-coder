@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React from "react";
+import Navbar from "./Navbar";
 
 const Header = () => {
   useGSAP(() => {
@@ -18,25 +19,7 @@ const Header = () => {
       <div className="flex">
         <h1 className="text-2xl font-bold text-secondary">Roshan</h1>
       </div>
-      <nav className="ml-16">
-        <ul className="flex *:px-2 *:transition-colors hover:*:text-secondary max-md:hidden">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Service</a>
-          </li>
-          <li>
-            <a href="#">Portfolio</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
       <a
         href="#"
         className="ml-auto w-fit border px-6 py-3 transition-colors hover:border-secondary hover:text-secondary"

@@ -34,7 +34,10 @@ const Hero = () => {
     });
   }, []);
   return (
-    <div className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-clip px-20 max-md:px-4">
+    <section
+      className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-clip px-20 max-md:px-4"
+      id="section-home"
+    >
       <div
         className="fixed left-0 top-0 z-50 flex h-screen w-full items-center justify-center bg-black"
         id="overlay"
@@ -59,7 +62,7 @@ const Hero = () => {
         Hello, my name is Roshan Kumar, nice to meet you I would like to <br />
         welcome you with my portfolio.
       </p>
-    </div>
+    </section>
   );
 };
 

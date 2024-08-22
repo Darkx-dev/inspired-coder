@@ -2,7 +2,7 @@ import React from "react";
 
 const Projects = () => {
   return (
-    <div className="bg-gray-dark">
+    <section className="bg-gray-dark" id="section-projects">
       <div className="mt-10 w-full px-20 py-12 max-md:px-4">
         <h3 className="text-xl font-medium text-secondary">Skills</h3>
         <h1 className="mt-2 text-5xl font-medium tracking-tighter">
@@ -15,7 +15,7 @@ const Projects = () => {
           Under Construction
         </h1>
       </div>
-    </div>
+    </section>
   );
 };
 

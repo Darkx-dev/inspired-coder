@@ -25,7 +25,7 @@ const About = () => {
     });
   }, []);
   return (
-    <div className="relative mt-20 min-h-screen overflow-x-clip px-20 max-md:px-4">
+    <section className="relative mt-20 min-h-screen overflow-x-clip px-20 max-md:px-4" id="section-about">
       <div className="flex justify-between">
         <div className="">
           <div className="overflow-hidden">
@@ -65,7 +65,7 @@ const About = () => {
       <div className="h-[40vh] w-screen">
         <Stripes />
       </div>
-    </div>
+    </section>
   );
 };
 

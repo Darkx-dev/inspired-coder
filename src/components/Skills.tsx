@@ -26,7 +26,7 @@ const Skills: React.FC = () => {
     gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "#skills-section",
+        trigger: "#section-skills",
         scrub: 2,
         start: "top bottom",
         end: "center 60%",
@@ -39,7 +39,7 @@ const Skills: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen px-20 max-md:px-4" id="skills-section">
+    <section className="min-h-screen px-20 max-md:px-4" id="section-skills">
       <div className="w-full text-center">
         <div className="overflow-hidden">
           <h3 className="skill-head text-xl font-medium text-secondary">
@@ -105,7 +105,7 @@ const Skills: React.FC = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
