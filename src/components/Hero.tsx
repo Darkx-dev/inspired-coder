@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 const Hero = () => {
   useGSAP(() => {
     const body = window.document.querySelector<HTMLBodyElement>("body");
-    body?.classList.add("force-scroll-disabled");
+    // body?.classList.add("force-scroll-disabled");
     const tl = gsap.timeline();
     tl.set("#overlay", {
       opacity: 0,
