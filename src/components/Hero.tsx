@@ -5,26 +5,42 @@ import { useGSAP } from "@gsap/react";
 
 const Hero = () => {
   useGSAP(() => {
-    const tl = gsap.timeline()
+    const body = window.document.querySelector<HTMLBodyElement>("body");
+    body?.classList.add("force-scroll-disabled");
+    const tl = gsap.timeline();
+    tl.set("#overlay", {
+      opacity: 0,
+      onComplete: () => {
+        gsap.set("#overlay", { display: "none" });
+        body?.classList.remove("force-scroll-disabled");
+      },
+    });
     tl.from("#firstname", {
       duration: 1,
       opacity: 0,
-      x: "-10em",
+      x: "-12em",
     });
-    tl.from("#lastname", {
-      duration: 1,
-      opacity: 0,
-      x: '10em',
-    
-    }, "<");
+    tl.from(
+      "#lastname",
+      {
+        duration: 1,
+        opacity: 0,
+        x: "12em",
+      },
+      "<",
+    );
     tl.from("#paragraph", {
-      y: '120%'
-    })
+      y: "120%",
+    });
   }, []);
   return (
-    <div className="px-20 max-md:px-4 min-h-[calc(100vh-5rem)] flex items-center justify-center relative overflow-clip">
+    <div className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-clip px-20 max-md:px-4">
+      <div
+        className="fixed left-0 top-0 z-50 flex h-screen w-full items-center justify-center bg-black"
+        id="overlay"
+      ></div>
       <div className="z-10">
-        <h1 className="text-[12rem] max-md:text-7xl leading-[0.85] font-semibold tracking-tight *:block text-center">
+        <h1 className="text-center text-[12rem] font-semibold leading-[0.85] tracking-tight *:block max-md:text-7xl">
           <span
             className="-translate-x-40 max-md:-translate-x-10"
             id="firstname"
@@ -36,7 +52,10 @@ const Hero = () => {
           </span>
         </h1>
       </div>
-      <p className="text-gray-light text-center text-lg font-medium mt-auto absolute bottom-2 z-10" id="paragraph">
+      <p
+        className="absolute bottom-2 z-10 mt-auto text-center text-lg font-medium text-gray-light"
+        id="paragraph"
+      >
         Hello, my name is Roshan Kumar, nice to meet you I would like to <br />
         welcome you with my portfolio.
       </p>

@@ -2,9 +2,11 @@
 import gsap from "gsap";
 import React, { useRef } from "react";
 import { skills } from "@/data/constants";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 const Skills: React.FC = () => {
-  const menuRefs: any = []
+  const menuRefs: any = [];
 
   const toggleMenu = (index: number) => {
     const menu = menuRefs[index];
@@ -20,25 +22,49 @@ const Skills: React.FC = () => {
     }
   };
 
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#skills-section",
+        scrub: 2,
+        start: "top bottom",
+        end: "center 60%",
+      },
+    });
+    tl.from([".skill-head", ".skill-subtitle"], {
+      y: 100,
+      stagger: 0.1,
+    });
+  }, []);
+
   return (
-    <div className="mt-20 px-20 max-md:px-4 min-h-screen">
-      <div className="text-center w-full">
-        <h3 className="text-secondary font-medium text-xl">Skills</h3>
-        <h1 className="text-5xl font-medium tracking-tighter mt-2">
-          Tools and Technologies <br />
-          That Power My Development
-        </h1>
+    <div className="min-h-screen px-20 max-md:px-4" id="skills-section">
+      <div className="w-full text-center">
+        <div className="overflow-hidden">
+          <h3 className="skill-head text-xl font-medium text-secondary">
+            Skills
+          </h3>
+        </div>
+        <div className="overflow-hidden">
+          <h1 className="skill-subtitle mt-2 text-5xl font-medium tracking-tighter">
+            Tools and Technologies <br />
+            That Power My Development
+          </h1>
+        </div>
       </div>
-      <div className="grid lg:grid-cols-2 gap-5 mt-32">
+      <div className="mt-32 grid gap-5 lg:grid-cols-2">
         {skills.map((skill, index) => (
           <div key={index}>
-            <div className="flex flex-col mb-10">
+            <div className="mb-10 flex flex-col">
               <button
                 onClick={() => toggleMenu(index)}
-                className="flex mb-4 items-center text-nowrap relative font-medium tracking-wider hover:text-black py-2 px-2 after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-20 after:z-[-20] after:bg-secondary after:w-full after:bottom-0 after:left-0"
+                className="relative z-20 mb-4 flex items-center overflow-hidden text-nowrap px-2 py-2 font-medium tracking-wider transition-all duration-500 after:absolute after:bottom-0 after:left-0 after:z-[-20] after:h-1 after:w-full after:bg-secondary after:transition-all after:duration-500 hover:text-black hover:transition-all hover:duration-500 after:hover:h-[200%] after:hover:transition-all after:hover:duration-500"
               >
-                <h1 className="text-xl space-x-2">
-                  <span className="text-secondary text-2xl">{index.toString().padStart(2, "0")}.</span>
+                <h1 className="space-x-2 text-xl">
+                  <span className="text-2xl text-secondary">
+                    {index.toString().padStart(2, "0")}.
+                  </span>
                   <span>{skill.category}</span>
                 </h1>
                 <i>
@@ -60,7 +86,7 @@ const Skills: React.FC = () => {
               </button>
               <ul
                 ref={(elem) => menuRefs.push(elem)}
-                className="grid grid-cols-2  overflow-hidden active *:border *:px-4 *:py-2"
+                className="active grid grid-cols-2 overflow-hidden *:border *:px-4 *:py-2"
                 style={{
                   height: 0,
                   opacity: 0,
@@ -69,7 +95,7 @@ const Skills: React.FC = () => {
                 {skill.items.map((item, idx) => (
                   <span
                     key={idx}
-                    className="hover:text-secondary cursor-default font-medium"
+                    className="cursor-default font-medium hover:text-secondary"
                   >
                     {item}
                   </span>

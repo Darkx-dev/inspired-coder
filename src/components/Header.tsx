@@ -7,19 +7,19 @@ const Header = () => {
     gsap.from("#header", {
       opacity: 0,
       y: -200,
-      duration: 1.5
+      duration: 1.5,
     });
   });
   return (
     <header
-      className="flex items-center w-full px-20 max-md:px-4 h-20"
+      className="flex h-20 w-full items-center px-20 max-md:px-4"
       id="header"
     >
       <div className="flex">
         <h1 className="text-2xl font-bold text-secondary">Roshan</h1>
       </div>
       <nav className="ml-16">
-        <ul className="flex *:px-2 hover:*:text-secondary *:transition-colors  max-md:hidden">
+        <ul className="flex *:px-2 *:transition-colors hover:*:text-secondary max-md:hidden">
           <li>
             <a href="#">Home</a>
           </li>
@@ -39,7 +39,7 @@ const Header = () => {
       </nav>
       <a
         href="#"
-        className="border w-fit px-6 py-3 ml-auto hover:text-secondary hover:border-secondary transition-colors"
+        className="ml-auto w-fit border px-6 py-3 transition-colors hover:border-secondary hover:text-secondary"
       >
         <span>Get in Touch</span>
       </a>

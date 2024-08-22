@@ -9,7 +9,7 @@ const OutlinedButton = ({ title, className }: OutlinedButtonParams) => {
   return (
     <a
       href="#"
-      className={`border w-fit px-6 py-3 ml-auto hover:text-secondary hover:border-secondary transition-colors ${className}`}
+      className={`ml-auto w-fit border px-6 py-3 transition-colors hover:border-secondary hover:text-secondary ${className}`}
     >
       {title}
     </a>

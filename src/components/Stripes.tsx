@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import React, { useEffect, useLayoutEffect } from "react";
+import Marquee from "./Marquee";
 
 const Stripes = () => {
   useGSAP(() => {
@@ -13,46 +14,45 @@ const Stripes = () => {
         start: "top bottom",
         end: "bottom top",
         scrub: 1,
-        // markers: true,
       },
     });
     tl.from("#stripe1", {
-      translateX: 600,
+      translateX: 1000,
       ease: "power1.inOut",
     });
     tl.from(
       "#stripe2",
       {
-        translateX: -600,
+        translateX: -1000,
       },
-      "<"
+      "<",
     );
   }, []);
 
   return (
     <div
-      className="text-5xl font-bold text-black text-nowrap  uppercase relative h-32 *:bg-secondary *:flex *:py-4 w-full *:absolute *:left-1/2  *:transform *:-translate-x-1/2 *:-translate-y-1/2"
+      className="relative h-32 w-full text-nowrap text-5xl font-bold uppercase text-black *:absolute *:left-1/2 *:flex *:-translate-x-1/2 *:-translate-y-1/2 *:transform *:bg-secondary *:py-4"
       id="stripes"
     >
       <div className="-rotate-[4deg] opacity-30" id="stripe1">
         <h1>
           Development • Frontend • Backend • Innovative Solutions • Creative
-          Design • Cutting-Edge Technologies • Continuous Learning
+          Design • Cutting-Edge Technologies • Continuous Learning •
         </h1>
-        {/* <h1>
-          Development • Frontend • Backend • Innovative Solutions • Creative
-          Design • Cutting-Edge Technologies • Continuous Learning
-        </h1> */}
-      </div>
-      <div className="rotate-[4deg]" id="stripe2">
         <h1>
           Development • Frontend • Backend • Innovative Solutions • Creative
           Design • Cutting-Edge Technologies • Continuous Learning
         </h1>
-        {/* <h1>
+      </div>
+      <div className="rotate-[4deg]" id="stripe2">
+        <h1>
+          Development • Frontend • Backend • Innovative Solutions • Creative
+          Design • Cutting-Edge Technologies • Continuous Learning •
+        </h1>
+        <h1>
           Development • Frontend • Backend • Innovative Solutions • Creative
           Design • Cutting-Edge Technologies • Continuous Learning
-        </h1> */}
+        </h1>
       </div>
     </div>
   );

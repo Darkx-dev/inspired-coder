@@ -1,18 +1,19 @@
 import React from "react";
 
 const Projects = () => {
-    
   return (
     <div className="bg-gray-dark">
-      <div className="w-full mt-10 px-20 max-md:px-4 py-12">
-        <h3 className="text-secondary font-medium text-xl">Skills</h3>
-        <h1 className="text-5xl font-medium tracking-tighter mt-2">
+      <div className="mt-10 w-full px-20 py-12 max-md:px-4">
+        <h3 className="text-xl font-medium text-secondary">Skills</h3>
+        <h1 className="mt-2 text-5xl font-medium tracking-tighter">
           Top Projects <br />
           That Enhanced my journey
         </h1>
       </div>
-      <div className="flex items-center justify-center h-screen">
-        <h1 className="text-6xl max-md:text-5xl text-center text-secondary font-semibold">Under Construction</h1>
+      <div className="flex h-screen items-center justify-center">
+        <h1 className="text-center text-6xl font-semibold text-secondary max-md:text-5xl">
+          Under Construction
+        </h1>
       </div>
     </div>
   );

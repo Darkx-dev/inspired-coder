@@ -15,10 +15,10 @@ type LetterFadeParams = {
 };
 
 const letterGroup = (text: string, highlightWords?: string[]) => {
-  const letters = text.split("");
+  const letters = text.split(" ");
   return letters.map((letter, index) => {
     return (
-      <span key={index} className="fade-letter">
+      <span key={index} className="fade-letter inline-block pr-2">
         {/* {letter == " " && <span className="">_ </span>} */}
         {letter}
       </span>
@@ -34,23 +34,24 @@ const LetterFade = ({
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(".fade-letter", {
-      opacity: 0.15,
+      opacity: 0.08,
       translateY: 50,
       duration: 1,
-      stagger: 0.04,
+      stagger: 0.8,
+      x: -400,
       scrollTrigger: {
-        trigger: ".fade-letter",
-        start: "top 80%",
-        end: "bottom 25%",
+        trigger: "#fade",
+        start: "top bottom",
+        end: "center 60%",
         scrub: 2,
       },
     });
   });
   return (
-    <p className={className}>
+    <p className={className} id="fade">
       {letterGroup(
         children?.toString() || "No text was provided",
-        highlightWords
+        highlightWords,
       )}
     </p>
   );

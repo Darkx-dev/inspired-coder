@@ -2,13 +2,13 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="px-20 max-md:px-4 mt-10 pb-5">
-      <div className="border-t-2 pt-10 border-gray-light flex justify-between">
+    <div className="mt-10 px-20 pb-5 max-md:px-4">
+      <div className="flex justify-between border-t-2 border-gray-light pt-10">
         {/* <p></p> */}
-        <h4 className="text-gray-light mt-auto">
+        <h4 className="mt-auto text-gray-light">
           @Roshan Kumar. All right reserver 2024
         </h4>
-        <ul className="text-end space-y-2 hover:*:*:text-secondary *:*:transition-colors">
+        <ul className="space-y-2 text-end *:*:transition-colors hover:*:*:text-secondary">
           <li>
             <a href="#">Instagram</a>
           </li>

@@ -21,27 +21,27 @@ const About = () => {
     });
     tl.from([".about-head", "#about-subtitle", ".about-btn"], {
       y: 100,
-      stagger: 0.05,
+      stagger: 0.02,
     });
   }, []);
   return (
-    <div className="min-h-screen px-20 max-md:px-4 pt-10 relative overflow-x-clip">
+    <div className="relative mt-20 min-h-screen overflow-x-clip px-20 max-md:px-4">
       <div className="flex justify-between">
         <div className="">
           <div className="overflow-hidden">
-            <h3 className="text-secondary font-medium text-xl about-head">
+            <h3 className="about-head text-xl font-medium text-secondary">
               About Me
             </h3>
           </div>
           <div className="overflow-hidden">
             <h1
-              className="text-5xl font-medium tracking-tighter mt-2 overflow-hidden"
+              className="mt-2 overflow-hidden text-5xl font-medium tracking-tighter"
               id="about-subtitle"
             >
               I can deliver results that <br /> exceed your expectations.
             </h1>
           </div>
-          <div className="mt-12 w-fit about-btn">
+          <div className="about-btn mt-12 w-fit">
             <OutlinedButton title="Hire Me Now" />
           </div>
         </div>
@@ -50,7 +50,7 @@ const About = () => {
         </div> */}
       </div>
       <LetterFade
-        className="mt-10 z-50 text-gray-200 lg:w-1/2 text-start text-lg font-medium ml-auto h-[85vh] tracking-widest"
+        className="z-50 ml-auto mt-10 h-[85vh] text-start text-lg font-medium tracking-widest text-gray-200 lg:w-1/2"
         highlightWords={["Roshan"]}
       >
         Hi, I&apos;m Roshan, a self-taught Full Stack Developer with over a year
@@ -62,7 +62,7 @@ const About = () => {
         always eager to dive into the latest tools and frameworks to craft
         innovative solutions.
       </LetterFade>
-      <div className=" w-screen h-[60vh]">
+      <div className="h-[40vh] w-screen">
         <Stripes />
       </div>
     </div>
