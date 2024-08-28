@@ -4,11 +4,13 @@ import React, { useEffect, useRef, useState } from "react";
 interface DrawingCursorProps {
   gradientColors?: string[]; // Optional array of gradient colors
   size?: number; // Optional
+  length?: number; // Optional
 }
 
 const DrawingCursor: React.FC<DrawingCursorProps> = ({
   gradientColors = ["#ffffff"],
   size = 5,
+  length = 8
 }) => {
   "use client";
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -34,7 +36,7 @@ const DrawingCursor: React.FC<DrawingCursorProps> = ({
       points.current.push({ x: e.clientX, y: e.clientY });
 
       // Limit the number of points to 10
-      if (points.current.length > 15) {
+      if (points.current.length >= length) {
         points.current.shift();
       }
 

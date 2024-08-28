@@ -28,7 +28,7 @@ export default function RootLayout({
         /> */}
         <link rel="icon" type="image/png" href="/favicon-modified.png" />
       </head>
-      <body className={monsterrat.className + " bg-black text-white"}>
+      <body className={monsterrat.className + " bg-black text-white "}>
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>

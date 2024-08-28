@@ -184,25 +184,25 @@ const ParticlesCursor: React.FC<ParticlesCursorProps> = ({
       mouseRef.current.lastY = mouseRef.current.y;
     };
 
-    const drawIdleCircle = (size = idleCircleSize / 2) => {
-      if (!ctx || !isIdle) return;
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(mouseRef.current.x, mouseRef.current.y, size, 0, Math.PI * 2);
-      ctx.fillStyle = particleColor;
-      ctx.globalAlpha = 0.3;
-      ctx.fill();
+    // const drawIdleCircle = (size = idleCircleSize / 2) => {
+    //   if (!ctx || !isIdle) return;
+    //   ctx.save();
+    //   ctx.beginPath();
+    //   ctx.arc(mouseRef.current.x, mouseRef.current.y, size, 0, Math.PI * 2);
+    //   ctx.fillStyle = particleColor;
+    //   ctx.globalAlpha = 0.3;
+    //   ctx.fill();
 
-      if (glowEffect) {
-        ctx.shadowBlur = 20;
-        ctx.shadowColor = particleColor;
-        ctx.strokeStyle = particleColor;
-        ctx.lineWidth = 2;
-        ctx.stroke();
-      }
+    //   if (glowEffect) {
+    //     ctx.shadowBlur = 20;
+    //     ctx.shadowColor = particleColor;
+    //     ctx.strokeStyle = particleColor;
+    //     ctx.lineWidth = 2;
+    //     ctx.stroke();
+    //   }
 
-      ctx.restore();
-    };
+    //   ctx.restore();
+    // };
 
     const render = () => {
       if (!ctx) return;
@@ -229,7 +229,7 @@ const ParticlesCursor: React.FC<ParticlesCursorProps> = ({
       //     : currentInteraction?.hoverEffect === "shrink"
       //       ? 0.5
       //       : 1;
-      // gsap.to(cursor, {
+      // gsap.to(cursorRef, {
       //   width: cursorSize ,
       //   height: cursorSize * scale,
       //   backgroundColor: currentInteraction?.hoverColor || cursorColor,
@@ -315,7 +315,8 @@ const ParticlesCursor: React.FC<ParticlesCursorProps> = ({
         className="pointer-events-none fixed left-0 top-0 z-50 h-full w-full"
       />
       <div
-        className="pointer-events-none fixed left-0 top-0 z-50 w-fit -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-secondary bg-secondary/40 p-3"
+        className="pointer-events-none fixed left-0 top-0 z-50 w-fit -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-secondary bg-secondary/40"
+        style={{ width: idleCircleSize, height: idleCircleSize }}
         ref={cursorRef}
       ></div>
     </>

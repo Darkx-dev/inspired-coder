@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import CubeIcon from "../../illustrations/Cube";
 import gsap from "gsap";
@@ -6,13 +7,14 @@ import { useGSAP } from "@gsap/react";
 const Hero = () => {
   useGSAP(() => {
     const body = window.document.querySelector<HTMLBodyElement>("body");
-    // body?.classList.add("force-scroll-disabled");
+    body?.classList.add("force-scroll-disabled");
+
     const tl = gsap.timeline();
+
     tl.set("#overlay", {
       opacity: 0,
       onComplete: () => {
         gsap.set("#overlay", { display: "none" });
-        body?.classList.remove("force-scroll-disabled");
       },
     });
     tl.from("#firstname", {
@@ -31,6 +33,19 @@ const Hero = () => {
     );
     tl.from("#paragraph", {
       y: "120%",
+      onComplete: () => body?.classList.remove("force-scroll-disabled"),
+    });
+    tl.from("#firstname-i", {
+      duration: 1.5,
+      opacity: 0,
+      y: "-150%",
+      ease: "elastic.inOut",
+    });
+    tl.from("#firstname-i-dot", {
+      y: "-8x",
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
     });
   }, []);
   return (
@@ -42,13 +57,20 @@ const Hero = () => {
         className="fixed left-0 top-0 z-50 flex h-screen w-full items-center justify-center bg-black"
         id="overlay"
       ></div>
-      <div className="z-10">
+      <div className="z-10 select-none">
         <h1 className="text-center text-[12rem] font-semibold leading-[0.85] tracking-tight *:block max-md:text-7xl">
-          <span
-            className=""
-            id="firstname"
-          >
-            Inspired
+          <span className="" id="firstname">
+            Insp
+            <span
+              className="relative ml-3 inline-block h-24 w-5 bg-white"
+              id="firstname-i"
+            >
+              <span
+                className="absolute -top-12 left-1/2 size-8 -translate-x-1/2 rounded-full bg-secondary"
+                id="firstname-i-dot"
+              ></span>
+            </span>
+            red
           </span>
           <span className="" id="lastname">
             Coder
@@ -59,9 +81,11 @@ const Hero = () => {
         className="absolute bottom-2 z-10 mt-auto text-center text-lg font-medium text-gray-light"
         id="paragraph"
       >
-        Hello, my name is Roshan Kumar, nice to meet you I would like to <br />
+        Hello, my name is <span className="text-white">Roshan Kumar</span>, nice
+        to meet you I would like to <br />
         welcome you with my portfolio.
       </p>
+      {/* <CubeIcon className="size-96 absolute" color="#90FF00" /> */}
     </section>
   );
 };

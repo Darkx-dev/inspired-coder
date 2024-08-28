@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef } from "react";
 import CubeIcon from "../../illustrations/Cube";
 import OutlinedButton from "../../buttons/Outlined";
