@@ -40,6 +40,8 @@ const Skills: React.FC = () => {
         scrub: 2,
         start: "top bottom",
         end: "center 60%",
+        pin: "#test",
+        pinSpacing: true,
       },
     });
     tl.from([".skill-head", ".skill-subtitle"], {
@@ -49,7 +51,7 @@ const Skills: React.FC = () => {
   }, []);
 
   return (
-    <section className="min-h-screen px-20 max-md:px-4" id="section-skills">
+    <section className="min-h-screen px-20 max-md:px-4 overflow-x-hidden" id="section-skills">
       <div className="w-full text-center">
         <div className="overflow-hidden">
           <h3 className="skill-head text-xl font-medium text-secondary">

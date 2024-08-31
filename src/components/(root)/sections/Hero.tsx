@@ -31,21 +31,15 @@ const Hero = () => {
       },
       "<",
     );
-    tl.from("#paragraph", {
-      y: "120%",
-      onComplete: () => body?.classList.remove("force-scroll-disabled"),
-    });
     tl.from("#firstname-i", {
-      duration: 1.5,
+      duration: 1.2,
       opacity: 0,
       y: "-150%",
       ease: "elastic.inOut",
     });
-    tl.from("#firstname-i-dot", {
-      y: "-8x",
-      duration: 3,
-      repeat: -1,
-      yoyo: true,
+    tl.from("#paragraph", {
+      y: "120%",
+      onComplete: () => body?.classList.remove("force-scroll-disabled"),
     });
   }, []);
   return (
@@ -59,17 +53,9 @@ const Hero = () => {
       ></div>
       <div className="z-10 select-none">
         <h1 className="text-center text-[12rem] font-semibold leading-[0.85] tracking-tight *:block max-md:text-7xl">
-          <span className="" id="firstname">
+          <span className="text-nowrap" id="firstname">
             Insp
-            <span
-              className="relative ml-3 inline-block h-24 w-5 bg-white"
-              id="firstname-i"
-            >
-              <span
-                className="absolute -top-12 left-1/2 size-8 -translate-x-1/2 rounded-full bg-secondary"
-                id="firstname-i-dot"
-              ></span>
-            </span>
+            <span className="inline-flex" id="firstname-i">i</span>
             red
           </span>
           <span className="" id="lastname">

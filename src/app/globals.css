@@ -41,11 +41,33 @@ html.lenis body {
   cursor: none !important;
 }
 
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.text-stroke-2 {
+  /* -webkit-text-stroke: 3px #fff; */
+  text-shadow:
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff;
+}
+
+.text-stroke-3 {
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
 /* body {
   --sb-track-color: #00000000;
   --sb-thumb-color: #90FF00;
   --sb-size: 10px;
 }
+
 
 body::-webkit-scrollbar {
   width: var(--sb-size);
